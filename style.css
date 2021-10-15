@@ -39,17 +39,11 @@ li button {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
-li button:hover {
-  background-color: gray;
-}
-
 li button:focus {
-  background-color: white;
   color: black;
 }
 
-.sections {
+#sections {
   max-height: calc(100vh);
   overflow-y: scroll;
   scroll-snap-type: mandatory;

@@ -8,37 +8,17 @@
 	<script src="cmd_line_text.js"></script>
 	<script src="section.js"></script>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="button_class.css">
 
 	<title>Matthew Roberson</title>
 </head>
 
 <body>	
 
-	<!--The different sections or pages of the site-->
-	<div class="sections">
-		<!--The top navigation bar-->
-		<ul>
-			<li><button id="HomeButton" onclick="sectionList['Home'].scrollToSection()" autofocus>Home</button></li>
-			<li><button id="EducationButton" onclick="sectionList['Education'].scrollToSection();">Education</button></li>
-			<li><button id="PersonalProjectsButton" onclick="sectionList['PersonalProjects'].scrollToSection();">Personal Projects</button></li>
-			<li><button id="ContactButton" onclick="sectionList['Contact'].scrollToSection();">Contact</button></li>
-		</ul>
-
-		<section id="Home" class="section-div">
-			<h1 id="HomeHeader" class="section-header">\> </h1>
-		</section>
-
-		<section id="Education" class="section-div">
-			<h1 id="EducationHeader" class="section-header">\> </h1>
-		</section>
-
-		<section id="PersonalProjects" class="section-div">
-			<h1 id="PersonalProjectsHeader" class="section-header">\> </h1>
-		</section>
-
-		<section id="Contact" class="section-div">
-			<h1 id="ContactHeader" class="section-header">\> </h1>
-		</section>
+	<!--The different sections or pages of the site. Populated in section.js-->
+	<div id="sections">
+		<!--The top navigation bar. Populated in section.js-->
+		<ul id="NavBar"></ul>
 	</div>
 
 	<script>
@@ -47,22 +27,25 @@
 		
 		const sectionList = {};
 
+		console.log(document.getElementById('sections'));
+
 		var observer = new IntersectionObserver(function(entries) {
 			var sectionID = entries[0].target.id;
 
 			if (entries[0].isIntersecting === true) {
+				console.log('ter');
 				sectionList[sectionID].cmdLineText.checkForPrint();
 				document.getElementById(sectionID+'Button').focus();
-
 			}
 		}, {
 			root: document.getElementById('sections'),
 			threshold: [1]
 		});
 
-		Array.from(document.getElementsByClassName('section-div')).forEach(section => {
-			sectionList[section.id] = new Section(section.id);
-		});
+		sectionList['Home'] = new Section('Home', 'Hello', 'white');
+		sectionList['Education'] = new Section('Education', 'This is the education page', 'orange');
+		sectionList['Skills'] = new Section('Skills', 'This is the skills page', 'purple');
+		sectionList['Projects'] = new Section('Projects', 'This is the projects page', 'green');
 
 	</script>
 

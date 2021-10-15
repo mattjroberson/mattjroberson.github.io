@@ -29,7 +29,10 @@ class CmdLineText{
 
   printLoop(){
     if (this.i < this.text.length) {
-      this.element.innerHTML += this.text.charAt(this.i);
+      const char = this.text.charAt(this.i) === '^' 
+        ? '<br>&nbsp&nbsp&nbsp' : this.text.charAt(this.i);
+
+      this.element.innerHTML += char;
       this.i++;
       setTimeout(() => {this.printLoop()}, this.calculateSpeed());
     }

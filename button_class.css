@@ -1,0 +1,17 @@
+
+.button-white:hover, .button-white:focus {
+    background-color: grey;
+}
+
+.button-orange:hover, .button-orange:focus {
+    background-color: orange;
+}
+
+.button-purple:hover, .button-purple:focus {
+    background-color: rgb(182, 82, 182);
+}
+
+.button-green:hover, .button-green:focus {
+    background-color: rgb(0, 160, 0);
+}
+

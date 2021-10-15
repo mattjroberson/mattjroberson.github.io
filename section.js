@@ -7,12 +7,12 @@ class Section{
       this.color = color;
 
       this.createNavButton();
-      this.sectionDiv = this.createSection();
+      this.section = this.createSection();
 
       this.header = document.getElementById(this.sectionID+'Header');
       this.cmdLineText = new CmdLineText(this.header, summary);
       
-      observer.observe(this.sectionDiv);
+      observer.observe(this.section);
   }
 
   createNavButton(){
@@ -49,7 +49,7 @@ class Section{
 
   //Scrolls to the section
   scrollToSection() {
-    this.sectionDiv.scrollIntoView({
+    this.section.scrollIntoView({
       behavior: 'auto',
       block: 'start'
     });

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="button_class.css">
 
 	<title>Matthew Roberson</title>
+	<link rel="shortcut icon" type="image/x-icon" href="code.ico" />
 </head>
 
 <body>	
@@ -26,25 +27,28 @@
 		history.scrollRestoration = 'manual';
 		
 		const sectionList = {};
+		const colorList = {};
 
-		console.log(document.getElementById('sections'));
+		colorList['white'] = '#fff';
+		colorList['orange'] = '#ff9933';
+		colorList['blue'] = '#04d9ff';
+		colorList['green'] = '#39ff14';
 
 		var observer = new IntersectionObserver(function(entries) {
-			var sectionID = entries[0].target.id;
+			const entry = entries[0];
 
-			if (entries[0].isIntersecting === true) {
-				console.log('ter');
-				sectionList[sectionID].cmdLineText.checkForPrint();
-				document.getElementById(sectionID+'Button').focus();
+			if (entry.isIntersecting === true) {
+				sectionList[entry.target.id].notifyVisible();				
 			}
 		}, {
 			root: document.getElementById('sections'),
+			rootMargin: '-52px 0px 0px 0px',
 			threshold: [1]
 		});
 
 		sectionList['Home'] = new Section('Home', 'Hello', 'white');
 		sectionList['Education'] = new Section('Education', 'This is the education page', 'orange');
-		sectionList['Skills'] = new Section('Skills', 'This is the skills page', 'purple');
+		sectionList['Skills'] = new Section('Skills', 'This is the skills page', 'blue');
 		sectionList['Projects'] = new Section('Projects', 'This is the projects page', 'green');
 
 	</script>

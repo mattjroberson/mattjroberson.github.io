@@ -6,10 +6,13 @@ class Section{
       this.summary = summary;
       this.color = color;
 
-      this.createNavButton();
+      this.button = this.createNavButton();
       this.section = this.createSection();
 
       this.header = document.getElementById(this.sectionID+'Header');
+      this.header.innerHTML = '\\> ';
+      this.header.style.color = colorList[this.color];
+
       this.cmdLineText = new CmdLineText(this.header, summary);
       
       observer.observe(this.section);
@@ -24,10 +27,12 @@ class Section{
     btn.id = this.title+'Button';
     btn.onclick = () => { this.scrollToSection() };
 
-    btn.classList.add('button-'+this.color);
+    btn.classList.add(`button-${this.color}`);
 
     li.appendChild(btn);
     ul.appendChild(li);
+
+    return btn;
   }
 
   createSection(){
@@ -37,6 +42,7 @@ class Section{
 
       section.id = this.sectionID;
       section.classList.add('section-div');
+      section.style.borderTop =`3px ${colorList[this.color]} solid`;
 
       h1.id = this.sectionID+'Header';
       h1.classList.add('section-header');
@@ -55,6 +61,11 @@ class Section{
     });
 
     //Start the printing of the header
+    this.cmdLineText.checkForPrint();
+  }
+
+  notifyVisible(){
+    this.button.focus();
     this.cmdLineText.checkForPrint();
   }
 }

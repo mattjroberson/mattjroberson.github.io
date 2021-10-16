@@ -47,17 +47,15 @@ li button:focus {
   max-height: calc(100vh);
   overflow-y: scroll;
   scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(3rem);
   scroll-snap-type: y mandatory;
 }
 
 /*Div styling for the navigation sections*/
 .section-div {
-  margin-top:2px;
   padding:15px;
   background-color: #000000;
-  height:calc(100vh - 54px);
-  scroll-margin: 54px;
+  height:calc(100vh - 52px);
+  scroll-margin: 52px;
   scroll-snap-align: start;
 }
 

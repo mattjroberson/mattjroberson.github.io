@@ -19,7 +19,10 @@
 	<!--The different sections or pages of the site. Populated in section.js-->
 	<div id="sections">
 		<!--The top navigation bar. Populated in section.js-->
-		<ul id="NavBar"></ul>
+		<div id="TopBar">
+			<ul id="NavBar"></ul>
+			<h1 id="Title">{ Matthew Roberson }</h1>
+		</div>
 	</div>
 
 	<script>
@@ -33,6 +36,7 @@
 		colorList['orange'] = '#ff9933';
 		colorList['blue'] = '#04d9ff';
 		colorList['green'] = '#39ff14';
+		colorList['red'] = '#ff0055';
 
 		var observer = new IntersectionObserver(function(entries) {
 			const entry = entries[0];
@@ -50,6 +54,7 @@
 		sectionList['Education'] = new Section('Education', 'This is the education page', 'orange');
 		sectionList['Skills'] = new Section('Skills', 'This is the skills page', 'blue');
 		sectionList['Projects'] = new Section('Projects', 'This is the projects page', 'green');
+		sectionList['Contact'] = new Section('Contact', 'Want to get in touch?', 'red');
 
 	</script>
 

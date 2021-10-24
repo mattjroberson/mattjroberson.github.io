@@ -10,15 +10,27 @@ html *
    margin: 0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+#TopBar {
   overflow: hidden;
   background-color: black;
 
   position: sticky;
   top: 0;
   width: 100%;
+}
+
+#Title {
+  float: right;
+  color: white;
+  padding: 10px 50px;
+  font-size: 30px;
+  font-style: normal;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  float: left;
 }
 
 li {
@@ -52,13 +64,33 @@ li button:focus {
 
 /*Div styling for the navigation sections*/
 .section-div {
+  display: flex; 
+  flex-direction: column;
   padding:15px;
-  background-color: #000000;
+  background-color: black;
   height:calc(100vh - 52px);
   scroll-margin: 52px;
   scroll-snap-align: start;
 }
 
 .section-header {
+  margin-bottom: 20px;
   color: white;
+}
+
+.content-grid-div{
+  align-content: center;
+  justify-content: center;
+
+  flex-grow: 1;
+  display: grid;
+  background: rgba(255, 255, 255, .25);
+  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: auto auto auto auto;
+}
+
+.item {
+  aspect-ratio: 1;
+  outline: white solid 1px;
+  background: grey;
 }

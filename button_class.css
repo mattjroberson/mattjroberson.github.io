@@ -15,6 +15,10 @@
     background-color: #39ff14;
 }
 
+.button-red:hover, .button-red:focus {
+    background-color: #ff0055;
+}
+
 button:hover{
     color: black;
 }

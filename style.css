@@ -8,11 +8,20 @@ html *
    font-family: ubuntuMono !important;
    box-sizing: border-box !important;
    margin: 0;
+   padding: 0;
+}
+
+html, body{
+  height: 100vh;
 }
 
 #TopBar {
   overflow: hidden;
   background-color: black;
+
+  display: flex;
+  flex-flow: row nowrap;
+  white-space: nowrap; /* will prevent text from wrapping */
 
   position: sticky;
   top: 0;
@@ -20,24 +29,16 @@ html *
 }
 
 #Title {
-  float: right;
+  margin-left:auto;
+  order: 100;
+  font-size: 1.5em;
+
   color: white;
-  padding: 10px 50px;
-  font-size: 30px;
+  padding: .5em 1em;
   font-style: normal;
 }
 
-ul {
-  padding: 0;
-  list-style-type: none;
-  float: left;
-}
-
-li {
-  float: left;
-}
-
-li button {
+button {
   background-color: black;
   color: white;
 
@@ -45,37 +46,38 @@ li button {
   outline: none;
   display: block;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5em;
 
-  padding: 14px 20px;
+  padding: .5em 1em;
   text-decoration: none;
 }
 
-li button:focus {
+button:focus{
   color: black;
 }
 
 #sections {
-  max-height: calc(100vh);
+  height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
 }
 
 /*Div styling for the navigation sections*/
 .section-div {
+  padding: 1em;
+
   display: flex; 
   flex-direction: column;
-  padding:15px;
   background-color: black;
-  height:calc(100vh - 52px);
-  scroll-margin: 52px;
+  height: calc(100% - 3em);
+  scroll-margin: 3em;
   scroll-snap-align: start;
 }
 
 .section-header {
-  margin-bottom: 20px;
-  color: white;
+  margin-bottom: .5em;
 }
 
 .content-grid-div{
@@ -85,12 +87,23 @@ li button:focus {
   flex-grow: 1;
   display: grid;
   background: rgba(255, 255, 255, .25);
-  grid-template-rows: repeat(2, 50%);
-  grid-template-columns: auto auto auto auto;
+  grid-auto-flow: row;
+  grid-template-rows: none;
+  grid-template-columns: repeat(4, min( calc(100% / 4), calc((100vh - 7.5em)/2)));
 }
 
 .item {
   aspect-ratio: 1;
   outline: white solid 1px;
   background: grey;
+  display: block;
+}
+
+@media(orientation: portrait){
+  .content-grid-div{
+    background: green;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, min( calc(100% / 4), calc((100vw - 3em)/2)));
+    grid-template-columns: none;
+  }
 }

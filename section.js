@@ -19,18 +19,15 @@ class Section{
   }
 
   createNavButton(){
-    const ul = document.getElementById('NavBar');
-    const li = document.createElement('li');
     const btn = document.createElement('button');
+    const topBar = document.getElementById('TopBar');
 
     btn.innerHTML = this.title;
     btn.id = this.title+'Button';
     btn.onclick = () => { this.scrollToSection() };
 
     btn.classList.add(`button-${this.color}`);
-
-    li.appendChild(btn);
-    ul.appendChild(li);
+    topBar.appendChild(btn);
 
     return btn;
   }

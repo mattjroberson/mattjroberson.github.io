@@ -43,22 +43,15 @@ class Section{
       section.style.borderTop =`3px ${colorList[this.color]} solid`;
 
       gridContainer.classList.add('content-grid-div');
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
+      gridContainer.appendChild(new FlipCard().card);
 
-      const x = document.createElement('div');
-      x.classList.add('item');
-      const y = document.createElement('div');
-      y.classList.add('item');
-      const z = document.createElement('div');
-      z.classList.add('item');
-      const d = document.createElement('div');
-      d.classList.add('item');
-      const h = document.createElement('div');
-      h.classList.add('item');
-      gridContainer.appendChild(x);
-      gridContainer.appendChild(y);
-      gridContainer.appendChild(d);
-      gridContainer.appendChild(z);
-      gridContainer.appendChild(h);
 
       h1.id = this.sectionID+'Header';
       h1.classList.add('section-header');

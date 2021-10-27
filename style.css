@@ -26,6 +26,7 @@ html, body{
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 #Title {
@@ -76,34 +77,27 @@ button:focus{
   scroll-snap-align: start;
 }
 
-.section-header {
-  margin-bottom: .5em;
-}
-
 .content-grid-div{
   align-content: center;
   justify-content: center;
 
-  flex-grow: 1;
   display: grid;
-  background: rgba(255, 255, 255, .25);
+  flex-grow: 1;
+  
   grid-auto-flow: row;
   grid-template-rows: none;
-  grid-template-columns: repeat(4, min( calc(100% / 4), calc((100vh - 7.5em)/2)));
+  grid-template-columns: repeat(4, min( calc((70% - 5em)/4), calc((100vh - 9.5em)/2)));
+  gap: 1em;
 }
 
-.item {
+.grid-item {
   aspect-ratio: 1;
-  outline: white solid 1px;
-  background: grey;
-  display: block;
 }
 
 @media(orientation: portrait){
-  .content-grid-div{
-    background: green;
+  .content-grid-div{    
     grid-auto-flow: column;
-    grid-template-rows: repeat(4, min( calc(100% / 4), calc((100vw - 3em)/2)));
+    grid-template-rows: repeat(4, min( calc((70% - 5em)/4), calc((100vw - 3em)/2)));
     grid-template-columns: none;
   }
 }

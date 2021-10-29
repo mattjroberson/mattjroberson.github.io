@@ -43,6 +43,7 @@ class Section{
       section.style.borderTop =`3px ${colorList[this.color]} solid`;
 
       gridContainer.classList.add('content-grid-div');
+      gridContainer.appendChild(new FlipCard('Android', 'This is a test', 'android_img').card);
       gridContainer.appendChild(new FlipCard().card);
       gridContainer.appendChild(new FlipCard().card);
       gridContainer.appendChild(new FlipCard().card);
@@ -50,8 +51,6 @@ class Section{
       gridContainer.appendChild(new FlipCard().card);
       gridContainer.appendChild(new FlipCard().card);
       gridContainer.appendChild(new FlipCard().card);
-      gridContainer.appendChild(new FlipCard().card);
-
 
       h1.id = this.sectionID+'Header';
       h1.classList.add('section-header');

@@ -71,9 +71,10 @@ button:focus{
 
 .section-header{
   display: block;
-  font-size: 2em;
+  font-size: 1.75em;
+  line-height: 1.4;
   font-weight: bold;
-  height: 2em;
+  height: 3em;
 }
 
 /*Div styling for the navigation sections*/
@@ -89,14 +90,14 @@ button:focus{
 }
 
 .content-grid-div{
-  align-content: center;
+  margin-top: 1em;
+  align-content: start;
   justify-content: center;
 
   display: grid;
   flex-grow: 1;
   
   grid-auto-flow: row;
-  grid-template-rows: none;
   grid-template-columns: repeat(4, min( calc((100% - 5em)/4), calc((100vh - 15em)/2)));
   gap: 1em;
 }

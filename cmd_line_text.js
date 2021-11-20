@@ -34,10 +34,11 @@ class CmdLineText extends HTMLElement{
 
   printLoop(){
     if (this.i < this.text.length) {
-      const char = this.text.charAt(this.i) === '^' 
-        ? '<br>&nbsp&nbsp&nbsp' : this.text.charAt(this.i);
+      //Obsolete multi line code. Decided to go single line from a design standpoint. 
+      // const char = this.text.charAt(this.i) === '^' 
+      //   ? '<br>&nbsp&nbsp&nbsp' /*'<br>\\> '*/ : this.text.charAt(this.i);
 
-      this.innerHTML += char;
+      this.innerHTML += this.text.charAt(this.i);
       this.i++;
       setTimeout(() => {this.printLoop()}, this.calculateSpeed());
     }

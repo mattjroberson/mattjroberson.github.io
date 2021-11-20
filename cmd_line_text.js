@@ -1,28 +1,33 @@
-class CmdLineText{
-  constructor(element, text){
-    this.element = element;
-    this.text = text;
+class CmdLineText extends HTMLElement{
+  constructor(){
+    super();
     this.printed = false;
     this.i = 0;
+ }
+
+  connectedCallback(){
+    setTimeout(() => {
+      this.id = `${this.parentNode.id}Header`;
+      this.classList.add('section-header');
+      this.style.color = this.parentNode.style.borderTopColor;
+      this.text = this.innerHTML;
+      this.innerHTML = '\\> '
+    });
   }
 
   calculateSpeed() {
     return 50 + Math.floor(Math.random()*20);
   }
 
-  wipe(){
-    this.element.innerHTML = '\\> ';
-  }
-
   checkForPrint(){
     if(this.printed === false){
+      this.printed = true;
       setTimeout(() => { this.printToScreen() }, 800);
     }
   }
 
   printToScreen(){
-    this.printed = true;
-    this.element.innerHTML = '\\> ';
+    this.innerHTML = '\\> ';
     this.i = 0;
     this.printLoop();
   }
@@ -32,7 +37,7 @@ class CmdLineText{
       const char = this.text.charAt(this.i) === '^' 
         ? '<br>&nbsp&nbsp&nbsp' : this.text.charAt(this.i);
 
-      this.element.innerHTML += char;
+      this.innerHTML += char;
       this.i++;
       setTimeout(() => {this.printLoop()}, this.calculateSpeed());
     }

@@ -4,19 +4,19 @@
 }
 
 .button-orange:hover, .button-orange:focus {
-    background-color: #ff9933;
+    background-color: #ff9900;
 }
 
 .button-blue:hover, .button-blue:focus {
-    background-color: #04d9ff;
+    background-color: #00ccff;
 }
 
 .button-green:hover, .button-green:focus {
-    background-color: #39ff14;
+    background-color: #00cc66;
 }
 
 .button-red:hover, .button-red:focus {
-    background-color: #ff0055;
+    background-color: #ff5050;
 }
 
 button:hover{

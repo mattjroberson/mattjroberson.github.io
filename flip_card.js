@@ -41,7 +41,7 @@ class FlipCard extends HTMLElement{
             //Back Card Content
             this.content = document.createElement('p');
             this.content.classList.add('flip-card-content');
-            this.content.innerText = innerText;
+            this.content.innerHTML = innerText;
             this.back.appendChild(this.content);
         });
     }

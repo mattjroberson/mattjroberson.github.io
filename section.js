@@ -16,6 +16,8 @@ class InfoSection extends HTMLElement{
 
   //Scrolls to the section
   scrollToSection() {
+    this.button.focus();
+
     this.scrollIntoView({
       behavior: 'auto',
       block: 'start'

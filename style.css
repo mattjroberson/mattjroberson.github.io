@@ -72,7 +72,8 @@ button:focus{
 .section-header{
   display: block;
   font-size: 1.75rem;
-  line-height: 1.4;
+  line-height: 2rem;
+  height: 4rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -108,6 +109,7 @@ button:focus{
 .content-grid-div{
   display: grid;
   flex-grow: 1;
+  align-self: center;
 
   --gutter: 1rem;
   --columns: 4;
@@ -119,7 +121,7 @@ button:focus{
     ) / var(--columns)
   );
 
-  --row-size-2: calc((100vh - 10rem)/var(--rows));
+  --row-size-2: calc((100vh - 11rem)/var(--rows));
 
   --row-size: min(var(--row-size-1), var(--row-size-2));
 
@@ -135,11 +137,9 @@ button:focus{
   gap: var(--gutter);
 }
 
-/* TODO: Update this to modern styling method*/
 @media(orientation: portrait){
-  .content-grid-div{    
-    grid-auto-flow: column;
-    grid-template-rows: repeat(4, min( calc((100% - 5em)/4), calc((100vw - 3em)/2)));
-    grid-template-columns: none;
+  .content-grid-div{  
+    --rows: 3;
+    --columns: 3;
   }
 }

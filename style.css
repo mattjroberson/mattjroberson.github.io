@@ -94,8 +94,7 @@ button:focus{
 
   height: calc(100% - 3rem);
 
-  scroll-margin: 3rem;
-  scroll-snap-margin: 3rem;
+  scroll-margin: 6rem;
   scroll-snap-align: start;
 }
 

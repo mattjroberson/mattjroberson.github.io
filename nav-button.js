@@ -1,4 +1,4 @@
-class NavButton extends HTMLElement{
+class NavButton extends HTMLButtonElement{
 
     constructor(){
       super();
@@ -51,7 +51,7 @@ class NavButton extends HTMLElement{
     }
 
     updateOtherButtons(){
-        let buttons = document.getElementsByTagName('nav-button');
+        let buttons = document.getElementsByTagName('button');
         for (let btn of buttons) {
             if(btn !== this) btn.deactivate();
         }

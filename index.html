@@ -15,7 +15,7 @@
 		customElements.define('flip-card', FlipCard);
 		customElements.define('info-section', InfoSection);
 		customElements.define('cmd-line-text', CmdLineText);
-		customElements.define('nav-button', NavButton);
+		customElements.define('nav-button', NavButton, { extends: "button" });
 	</script>
 
 	<title>Matthew Roberson</title>
@@ -27,18 +27,18 @@
 	<div id="sections">
 		<div id="TopBar">
 			<h1 id="Title">{ Matthew Roberson }</h1>
-			<nav-button name="Home", color="white">
+			<button is="nav-button", name="Home", color="white">
 				Home
-			</nav-button>
-			<nav-button name="Education", color="#ff9900">
+			</button>
+			<button is="nav-button", name="Education", color="#ff9900">
 				Education
-			</nav-button>
-			<nav-button name="Skills", color="#00ccff">
+			</button>
+			<button is="nav-button", name="Skills", color="#00ccff">
 				Skills
-			</nav-button>
-			<nav-button name="Projects", color="#00cc66">
+			</button>
+			<button is="nav-button", name="Projects", color="#00cc66">
 				Projects
-			</nav-button>
+			</button>
 		</div>
 
 		<!--The different sections or "pages" of the site.-->

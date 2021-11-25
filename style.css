@@ -94,8 +94,7 @@ button:focus{
 
   height: calc(100% - 3rem);
 
-  scroll-margin: 6rem;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 }
 
 /*Calculations reference from Lasse Diercks https://codepen.io/lassediercks/pen/VMqMBm */

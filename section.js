@@ -20,7 +20,7 @@ class InfoSection extends HTMLElement{
 
     this.scrollIntoView({
       behavior: 'auto',
-      block: 'start'
+      block: 'end'
     });
 
     //Start the printing of the header

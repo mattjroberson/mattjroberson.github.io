@@ -2,19 +2,20 @@
 
 <html>
 <head>
+	<script src="nav-button.js"></script>
 	<script src="cmd_line_text.js"></script>
 	<script src="section.js"></script>
 	<script src="flip_card.js"></script>
 	<script src="scroll-manager.js"></script>
 
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="button_class.css">
 	<link rel="stylesheet" href="flip-card.css">
 
 	<script>
 		customElements.define('flip-card', FlipCard);
 		customElements.define('info-section', InfoSection);
 		customElements.define('cmd-line-text', CmdLineText);
+		customElements.define('nav-button', NavButton);
 	</script>
 
 	<title>Matthew Roberson</title>
@@ -26,14 +27,18 @@
 	<div id="sections">
 		<div id="TopBar">
 			<h1 id="Title">{ Matthew Roberson }</h1>
-			<button id="HomeButton" class="button-white"
-				onclick="document.getElementById('Home').scrollToSection()">Home</button>
-			<button id="EducationButton" class="button-orange"
-				onclick="document.getElementById('Education').scrollToSection()">Education</button>
-			<button id="SkillsButton" class="button-blue"
-				onclick="document.getElementById('Skills').scrollToSection()">Skills</button>
-			<button id="ProjectsButton" class="button-green"
-				onclick="document.getElementById('Projects').scrollToSection()">Projects</button>
+			<nav-button name="Home", color="white">
+				Home
+			</nav-button>
+			<nav-button name="Education", color="#ff9900">
+				Education
+			</nav-button>
+			<nav-button name="Skills", color="#00ccff">
+				Skills
+			</nav-button>
+			<nav-button name="Projects", color="#00cc66">
+				Projects
+			</nav-button>
 		</div>
 
 		<!--The different sections or "pages" of the site.-->

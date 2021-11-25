@@ -47,25 +47,6 @@ body{
   font-style: normal;
 }
 
-button {
-  background-color: black;
-  color: white;
-
-  border: none;
-  outline: none;
-  display: block;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 0px;
-
-  padding: .5rem 1rem;
-  text-decoration: none;
-}
-
-button:focus{
-  color: black;
-}
-
 #sections {
   height: 100%;
   width: 100%;
@@ -73,6 +54,23 @@ button:focus{
   overflow-x: hidden;
   scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
+}
+
+.nav-button {
+  background-color: black;
+  color: white;
+
+  border: none;
+  outline: none;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 0px;
+
+  padding: .5rem 1rem;
+  text-decoration: none;
 }
 
 .section-header{

@@ -16,8 +16,6 @@ class InfoSection extends HTMLElement{
 
   //Scrolls to the section
   scrollToSection() {
-    this.button.focus();
-
     this.scrollIntoView({
       behavior: 'auto',
       block: 'end'
@@ -28,7 +26,7 @@ class InfoSection extends HTMLElement{
   }
 
   notifyVisible(){
-    this.button.focus();
+    this.button.activate();
     this.getElementsByTagName("cmd-line-text").item(0).checkForPrint();
   }
 }

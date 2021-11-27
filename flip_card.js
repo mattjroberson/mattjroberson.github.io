@@ -8,7 +8,6 @@ class FlipCard extends HTMLElement{
             let innerText = this.innerHTML;
             this.innerHTML = '';
 
-
             this.classList.add('grid-item', 'flip-card');
             //Card Content
             this.inner = document.createElement('div');
@@ -23,7 +22,7 @@ class FlipCard extends HTMLElement{
 
             //Front Card Image
             this.image = document.createElement('img');
-            this.image.src = `${this.getAttribute('img')}.png`;
+            this.image.src = `flipCardAssets/${this.getAttribute('img')}.png`;
             this.front.appendChild(this.image);
 
             //Back of Card

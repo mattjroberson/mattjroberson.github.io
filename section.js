@@ -7,8 +7,10 @@ class InfoSection extends HTMLElement{
   connectedCallback() {
     this.classList.add('section-div');
 
+    let borderColor = this.getAttribute('color');
+    this.style.borderTop = `3px ${borderColor} solid`;
+
     let title = this.getAttribute('id');
-    this.summary = this.getAttribute('summary');
     this.button = document.getElementById(title+'Button');
     
     observer.observe(this);

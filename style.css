@@ -41,6 +41,7 @@ body{
   margin-left:auto;
   order: 100;
   font-size: 1.5rem;
+  line-height: 2rem;
 
   color: white;
   padding: .5rem 1rem;
@@ -93,6 +94,7 @@ body{
 
   height: calc(100% - 3rem);
 
+  scroll-snap-stop: always;
   scroll-snap-align: end;
 }
 

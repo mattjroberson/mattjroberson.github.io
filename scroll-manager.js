@@ -9,6 +9,5 @@ var observer = new IntersectionObserver(function (entries) {
     }
 }, {
     root: document.getElementById('sections'),
-    rootMargin: '-48px 0px 0px 0px',
     threshold: [1]
 });

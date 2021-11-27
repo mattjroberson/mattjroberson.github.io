@@ -9,5 +9,7 @@ var observer = new IntersectionObserver(function (entries) {
     }
 }, {
     root: document.getElementById('sections'),
-    threshold: [1]
+    rootMargin: '-48px 0px 0px 0px',
+    //This needs to be < 1 because of an issue with Firefox Mobile 94
+    threshold: [.9995]
 });

@@ -116,7 +116,8 @@ body{
 
   --row-size-2: calc((100vh - 11rem)/var(--rows));
 
-  --row-size: min(var(--row-size-1), var(--row-size-2));
+  --row-size-3: min(var(--row-size-1), var(--row-size-2));
+  --row-size: min(var(--row-size-3), 400px);
 
   --content-width: calc(
     (var(--row-size) * var(--columns)) +

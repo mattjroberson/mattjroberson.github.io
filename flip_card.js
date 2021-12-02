@@ -8,6 +8,8 @@ class FlipCard extends HTMLElement{
             let innerText = this.innerHTML;
             this.innerHTML = '';
 
+            this.onclick = this.openLink;
+
             this.classList.add('grid-item', 'flip-card');
             //Card Content
             this.inner = document.createElement('div');
@@ -43,5 +45,13 @@ class FlipCard extends HTMLElement{
             this.content.innerHTML = innerText;
             this.back.appendChild(this.content);
         });
+    }
+
+    openLink(){
+        let URL = this.getAttribute('link');
+        
+        if(URL !== null){
+            window.open(URL, '_blank');   
+        }
     }
 }

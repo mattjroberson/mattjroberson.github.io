@@ -23,6 +23,10 @@ body{
   -webkit-overflow-scrolling: touch;
 }
 
+a {
+  all: unset;
+}
+
 #TopBar {
   background-color: black;
 
